@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "es6 axios class",
   "main": "./index.js",
   "types": "./index.d.ts",
