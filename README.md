@@ -11,7 +11,7 @@ $ npm i axios-es6-class
 Once installed we create our `userApi.ts`.
 
 <br />
-<br />
+#### NOTE: you need to bind your APIs endpoint in the constructor of your controller
 
 ```javascript
 import { Api } from "axios-es6-class";
@@ -26,7 +26,11 @@ export class UserApi extends Api {
     }
 
     public loginUser (url: string, credentials: UserCredentials): Promise<string> {
-        return this.post<string, UserCredentials, AxiosResponse<string>>(url, {username: credentials.username, pass: credentials.pass}).then((res: AxiosResponse<string>) => res.data)
+        return this.post<string, UserCredentials, AxiosResponse<string>>(url, credentials)
+          .then((res: AxiosResponse<string>) => res.data)
+          .catch((error: AxiosError<Error>)) => {
+             throw error;
+           });
     }
 }
 ```
