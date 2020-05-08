@@ -12,7 +12,18 @@ first we need to install it:
 $ npm i axios-es6-class
 ```
 
-Once installed we create our `userApi.ts`.
+for the baseUrl and for the timeout. we recommend to set on your `.env` file
+
+```
+...
+NODE_ENV=development
+API_BASE_URL=https://www.domain.com
+API_TIMEOUT=15000
+PORT=3001
+...
+```
+**`API_BASE_URL:`** baseUrl from axios request config.
+**`API_TIMEOUT:`** milliseconds the api should wait before *throwing* an Timeout exception
 
 <br />
 
