@@ -29,7 +29,7 @@ export class UserApi extends Api {
     public loginUser (url: string, credentials: UserCredentials): Promise<string> {
         return this.post<string, UserCredentials, AxiosResponse<string>>(url, credentials)
           .then((res: AxiosResponse<string>) => res.data)
-          .catch((error: AxiosError<Error>)) => {
+          .catch((error: AxiosError<Error>) => {
              throw error;
            });
     }
