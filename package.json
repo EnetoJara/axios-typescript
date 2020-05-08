@@ -14,7 +14,8 @@
     "index.js",
     "index.d.ts",
     "/lib/",
-    "/types/"
+    "/types/",
+    "/examples/"
   ],
   "scripts": {
     "build": "tsc --build ./tsconfig.json",
