@@ -5,6 +5,11 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "type": "commonjs",
+  "author": {
+    "name": "Ernesto Jara Olveda",
+    "email": "ernesto.jara06@gmail.com",
+    "url": "https://www.enetojarapro.com"
+  },
   "files": [
     "index.js",
     "index.d.ts",
@@ -19,7 +24,6 @@
     "TypeScript",
     "es6"
   ],
-  "author": "Ernesto Jara Olveda",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "13.13.5",
