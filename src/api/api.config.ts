@@ -1,10 +1,13 @@
 import { AxiosRequestConfig } from 'axios';
 import * as qs from "qs";
 
-export const apiConfig = (baseUrl: string, timeout: number): AxiosRequestConfig => ({
+const API_TIMEOUT = Number(process.env.API_TIMEOUT) || 10000;
+const API_BASE_URL = process.env.API_BASE_URL || "";
+
+export const apiConfig: AxiosRequestConfig = {
     withCredentials: true,
-    timeout: timeout,
-    baseURL: baseUrl,
+    timeout: API_TIMEOUT,
+    baseURL: API_BASE_URL,
     headers: {
         common: {
             "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -14,4 +17,4 @@ export const apiConfig = (baseUrl: string, timeout: number): AxiosRequestConfig 
         },
     },
     paramsSerializer: (params: string) => qs.stringify(params, { indices: false }),
-})
+};
