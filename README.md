@@ -1,6 +1,6 @@
 # axios-es6-class
 
-axios es6 class is a typescript module that implements axios to use it as a "modern" JavaScript TypeScript class.
+[axios](https://github.com/axios/axios) es6 class is a typescript module that implements axios to use it as a "modern" JavaScript TypeScript class.
 
 first we need to install it:
 
