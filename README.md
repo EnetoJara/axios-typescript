@@ -1,8 +1,8 @@
 # axios-es6-class
 
-[![npm version](https://img.shields.io/npm/v/axios-es6-class.svg?style=flat-square)](https://www.npmjs.org/package/axios-es6-class)
-[![install size](https://packagephobia.now.sh/badge?p=axios-es6-class)](https://packagephobia.now.sh/result?p=axios-es6-class-es6-class)
-[![npm downloads](https://img.shields.io/npm/dm/axios-es6-class.svg?style=flat-square)](http://npm-stat.com/charts.html?package=axios-es6-class)
+[![npm version](https://img.shields.io/npm/v/@eneto/axios-es6-class.svg?style=flat-square)](https://www.npmjs.org/package/@eneto/axios-es6-class)
+[![install size](https://packagephobia.now.sh/badge?p=@eneto/axios-es6-class)](https://packagephobia.now.sh/result?p=@eneto/axios-es6-class)
+[![npm downloads](https://img.shields.io/npm/dm/@eneto/axios-es6-class.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@eneto/axios-es6-class)
 
 &copy; Apache-2.0 License
 
@@ -13,7 +13,7 @@
 first we need to install it:
 
 ```shell
-$ npm i axios-es6-class
+$ npm i @eneto/axios-es6-class
 ```
 
 for the baseUrl and for the timeout. we recommend to set on your `.env` file
