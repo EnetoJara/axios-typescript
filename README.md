@@ -29,4 +29,21 @@ API_TIMEOUT=15000
 
 ### NOTE: you need to bind your APIs endpoint in the constructor of your controller
 
-[example](./examples/userApi.ts)
+[detail example](https://github.com/EnetoJara/axios-typescript/blob/master/examples/userApi.ts)
+
+```typescript
+export class UserApi extends Api {
+    constructor (config) {
+        // if you DO NOT pass any parameter.
+        // make sure to have an API_BASE_URL env variable
+        super(config);
+
+        this.login = this.login.bind(this);
+    }
+
+    login (credentials) {
+        return this.post("/users", credentials)
+            .then(this.success)
+    }
+}
+```

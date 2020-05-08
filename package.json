@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "es6 axios class",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -32,12 +32,12 @@
     "@types/qs": "6.9.2",
     "axios": "0.19.2",
     "qs": "6.9.4",
-    "tslint": "6.1.2",
+    "tslib": "1.11.2",
     "typescript": "3.8.3"
   },
   "peerDependencies": {
     "axios": "^0.19.2",
-    "tslint": "^6.1.2",
+    "tslib": "^1.11.2",
     "typescript": "^3.8.3"
   }
 }

@@ -3,7 +3,7 @@ import { Api } from './../src/api/api';
 import { Credentials, Token, User } from './interfaces';
 
 export class UserApi extends Api {
-    public constructor (config: AxiosRequestConfig) {
+    public constructor (config?: AxiosRequestConfig) {
         super(config);
 
 
@@ -25,15 +25,12 @@ export class UserApi extends Api {
 
     public userLogin (credentials: Credentials): Promise<Token> {
         return this.post<string,Credentials, AxiosResponse<string>>("https://www.domain.com/login", credentials)
-            .then((response: AxiosResponse<Token>) => response.data)
-            .catch((error: AxiosError<Error>) => {
-                throw error;
-            });
+            .then(this.success);
     }
 
     public userRegister (user: User): Promise<number> {
         return this.post<number, User, AxiosResponse<number>>("https://www.domain.com/register", user)
-            .then((response: AxiosResponse<number>) => response.status)
+            .then(this.success)
             .catch((error: AxiosError<Error>) => {
                 throw error;
             });
@@ -43,7 +40,7 @@ export class UserApi extends Api {
         try {
             const res: AxiosResponse<User[]> = await this.get<User,AxiosResponse<User[]>>("https://www.domain.com/register");
 
-            return res.data;
+            return this.success(res);
         } catch (error) {
             throw error;
         }
@@ -51,9 +48,6 @@ export class UserApi extends Api {
 
     public getById (id: number): Promise<User> {
         return this.get<User,AxiosResponse<User>>(`https://www.domain.com/users/${id}`)
-            .then((response: AxiosResponse<User>) => response.data)
-            .catch((error: AxiosError<Error>) => {
-                throw error;
-            });
+            .then(this.success)
     }
 }

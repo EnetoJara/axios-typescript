@@ -1,5 +1,5 @@
-
-import { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { API_BASE_URL } from './api.config';
 import { Axios } from './axios';
 
 /**
@@ -26,11 +26,16 @@ export class Api extends Axios {
     /**
      * Creates an instance of Api.
      *
-     * @param {import("axios").AxiosRequestConfig} config - axios configuration.
+     * @param {import("axios").AxiosRequestConfig} [config] - axios configuration.
      * @memberof Api
      */
-    public constructor (config: AxiosRequestConfig) {
+    public constructor (config?: AxiosRequestConfig) {
         super(config);
+
+        this.interceptors.request.use((param: AxiosRequestConfig) => ({
+            baseUrl: API_BASE_URL,
+            ...param
+        }));
 
         this.getUri = this.getUri.bind(this);
         this.request = this.request.bind(this);
@@ -45,7 +50,7 @@ export class Api extends Axios {
     /**
      * Get Uri
      *
-     * @param {AxiosRequestConfig} [config]
+     * @param {import("axios").AxiosRequestConfig} [config]
      * @returns {string}
      * @memberof Api
      */
@@ -57,8 +62,8 @@ export class Api extends Axios {
      * Generic request.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP axios response payload.
      * @memberof Api
@@ -79,14 +84,14 @@ export class Api extends Axios {
     }
 
     /**
-     * HTTP GET method, used to fetch data [statusCode]: 200.
+     * HTTP GET method, used to fetch data `statusCode`: 200.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
-     * @returns {Promise<R>} - HTTP [axios] response payload.
+     * @returns {Promise<R>} HTTP `axios` response payload.
      * @memberof Api
      */
     public get<T, R = AxiosResponse<T>> (url: string, config?: AxiosRequestConfig): Promise<R> {
@@ -94,11 +99,11 @@ export class Api extends Axios {
     }
 
     /**
-     * HTTP DELETE method, [statusCode]: 204 No Content.
+     * HTTP DELETE method, `statusCode`: 204 No Content.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP [axios] response payload.
@@ -112,8 +117,8 @@ export class Api extends Axios {
      * HTTP HEAD method.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP [axios] response payload.
@@ -124,13 +129,14 @@ export class Api extends Axios {
     }
 
     /**
-     * HTTP POST method [statusCode]: 201 Created.
+     * HTTP POST method `statusCode`: 201 Created.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template B - [BODY]: body request object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template B - `BODY`: body request object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
+     * @param {B} data - payload to be send as the `request body`,
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
@@ -143,10 +149,11 @@ export class Api extends Axios {
      * HTTP PUT method.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template B - [BODY]: body request object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template B - `BODY`: body request object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
+     * @param {B} data - payload to be send as the `request body`,
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
@@ -159,15 +166,31 @@ export class Api extends Axios {
      * HTTP PATCH method.
      *
      * @access public
-     * @template T - [TYPE]: expected object.
-     * @template B - [BODY]: body request object.
-     * @template R - [RESPONSE]: expected object inside a axios response format.
+     * @template T - `TYPE`: expected object.
+     * @template B - `BODY`: body request object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
      * @param {string} url - endpoint you want to reach.
+     * @param {B} data - payload to be send as the `request body`,
      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
     public patch<T, B, R = AxiosResponse<T>> (url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
         return this.patch(url, data, config);
+    }
+
+    /**
+     *
+     * @template T - type.
+     * @param {import("axios").AxiosResponse<T>} response - axios response.
+     * @returns {T} - expected object.
+     * @memberof Api
+     */
+    public success<T> (response: AxiosResponse<T>): T {
+        return response.data;
+    }
+
+    public error (error: AxiosError<Error>) {
+        throw error;
     }
 }

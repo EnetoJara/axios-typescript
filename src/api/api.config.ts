@@ -1,8 +1,8 @@
 import { AxiosRequestConfig } from 'axios';
 import * as qs from "qs";
 
-const API_TIMEOUT = Number(process.env.API_TIMEOUT) || 10000;
-const API_BASE_URL = process.env.API_BASE_URL || "";
+export const API_TIMEOUT = Number(process.env.API_TIMEOUT) || 10000;
+export const API_BASE_URL = process.env.API_BASE_URL || "";
 
 export const apiConfig: AxiosRequestConfig = {
     withCredentials: true,
