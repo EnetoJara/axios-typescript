@@ -11,7 +11,8 @@ $ npm i axios-es6-class
 Once installed we create our `userApi.ts`.
 
 <br />
-#### NOTE: you need to bind your APIs endpoint in the constructor of your controller
+
+### NOTE: you need to bind your APIs endpoint in the constructor of your controller
 
 ```javascript
 import { Api } from "axios-es6-class";
