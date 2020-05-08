@@ -1,0 +1,35 @@
+{
+  "name": "axios-typescript",
+  "version": "1.0.0",
+  "description": "es6 axios class",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc --build ./tsconfig.json",
+    "prebuild": "rm -rf ./types ./lib"
+  },
+  "keywords": [
+    "Axios",
+    "TypeScript",
+    "es6"
+  ],
+  "author": "Ernesto Jara Olveda",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "13.13.5",
+    "@types/qs": "6.9.2",
+    "axios": "0.19.2",
+    "tslint": "6.1.2",
+    "typescript": "3.8.3",
+    "qs": "6.9.4"
+  },
+  "peerDependencies": {
+    "@types/node": "^13.13.5",
+    "@types/qs": "^6.9.2",
+    "axios": "^0.19.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.8.3",
+    "qs": "^6.9.4"
+  }
+}
