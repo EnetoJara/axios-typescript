@@ -2,9 +2,14 @@
   "name": "axios-typescript",
   "version": "1.0.0",
   "description": "es6 axios class",
-  "main": "./lib/index.js",
-  "types": "./types/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "type": "commonjs",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "./lib/"
+  ],
   "scripts": {
     "build": "tsc --build ./tsconfig.json",
     "prebuild": "rm -rf ./types ./lib"
