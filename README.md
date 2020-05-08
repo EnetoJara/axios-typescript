@@ -8,6 +8,8 @@
 
 **axios es6 class** is a typescript module that implements *[axios](https://github.com/axios/axios)* to use it as a "modern" JavaScript TypeScript class.
 
+### [how-to-use-axios-typescript-like-a-pro](https://medium.com/@enetoOlveda/how-to-use-axios-typescript-like-a-pro-7c882f71e34a)
+
 first we need to install it:
 
 ```shell
