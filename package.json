@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "es6 axios class",
   "main": "./lib/index.js",
   "deprecated": false,
