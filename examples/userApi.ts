@@ -1,15 +1,27 @@
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { Api } from './../src/api/api';
-import { Credentials, Token, User } from './interfaces';
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { Api } from "./../src/api/api";
+import { Credentials, Token, User } from "./interfaces";
 
+/**
+ * Example class
+ *
+ * @export
+ * @class UserApi
+ * @extends {Api}
+ *
+ * @example
+ * const config = {
+ *  baseUrl: "www.domain.com"
+ * }
+ * const api = new UserApi(config);
+ *  */
 export class UserApi extends Api {
-    public constructor (config?: AxiosRequestConfig) {
+    public constructor(config: AxiosRequestConfig) {
         super(config);
-
 
         // this middleware is been called right before the http request is made.
         this.interceptors.request.use((param: AxiosRequestConfig) => ({
-            ...param,
+            ...param
         }));
 
         // this middleware is been called right before the response is get it by the method that triggers the request
@@ -23,12 +35,11 @@ export class UserApi extends Api {
         this.getById = this.getById.bind(this);
     }
 
-    public userLogin (credentials: Credentials): Promise<Token> {
-        return this.post<string,Credentials, AxiosResponse<string>>("domain/login", credentials)
-            .then(this.success);
+    public userLogin(credentials: Credentials): Promise<Token> {
+        return this.post<string, Credentials, AxiosResponse<string>>("domain/login", credentials).then(this.success);
     }
 
-    public userRegister (user: User): Promise<number> {
+    public userRegister(user: User): Promise<number> {
         return this.post<number, User, AxiosResponse<number>>("domain/register", user)
             .then(this.success)
             .catch((error: AxiosError<Error>) => {
@@ -36,9 +47,9 @@ export class UserApi extends Api {
             });
     }
 
-    public async getAllUsers (): Promise<User[]> {
+    public async getAllUsers(): Promise<User[]> {
         try {
-            const res: AxiosResponse<User[]> = await this.get<User,AxiosResponse<User[]>>("domain/register");
+            const res: AxiosResponse<User[]> = await this.get<User, AxiosResponse<User[]>>("domain/register");
 
             return this.success(res);
         } catch (error) {
@@ -46,8 +57,7 @@ export class UserApi extends Api {
         }
     }
 
-    public getById (id: number): Promise<User> {
-        return this.get<User,AxiosResponse<User>>(`domain/users/${id}`)
-            .then(this.success)
+    public getById(id: number): Promise<User> {
+        return this.get<User, AxiosResponse<User>>(`domain/users/${id}`).then(this.success);
     }
 }

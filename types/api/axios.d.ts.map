@@ -1,1 +1,1 @@
-{"version":3,"file":"axios.d.ts","sourceRoot":"","sources":["../../src/api/axios.ts"],"names":[],"mappings":"AAAA,OAAc,EAAE,kBAAkB,EAAE,MAAM,OAAO,CAAC;AAGlD,qBAAa,KAAK;IAEd,CAAC,CAAC,EAAC,MAAM,GAAG,GAAG,CAAC;gBAEI,MAAM,GAAE,kBAA4B;CAG3D"}
+{"version":3,"file":"axios.d.ts","sourceRoot":"","sources":["../../src/api/axios.ts"],"names":[],"mappings":"AAAA,OAAc,EAAE,kBAAkB,EAAE,MAAM,OAAO,CAAC;AAElD,qBAAa,KAAK;IAEd,CAAC,CAAC,EAAC,MAAM,GAAG,GAAG,CAAC;gBAEI,MAAM,EAAE,kBAAkB;CAGjD"}

@@ -16,22 +16,9 @@ first we need to install it:
 $ npm i axios-es6-class
 ```
 
-for the baseUrl and for the timeout. we recommend to set on your `.env` file
-
-```
-...
-API_BASE_URL=https://www.domain.com
-API_TIMEOUT=15000
-```
-
-**`API_BASE_URL:`** baseUrl from axios request config.
-**`API_TIMEOUT:`** milliseconds the api should wait before *throwing* an Timeout exception
-
-<br />
-
-### NOTE: you need to bind your APIs endpoint in the constructor of your controller
-
 [detail example](https://github.com/EnetoJara/axios-typescript/blob/master/examples/userApi.ts)
+
+The `class Api` expects an [axios request config object](https://github.com/axios/axios#request-config)
 
 ```typescript
 export class UserApi extends Api {

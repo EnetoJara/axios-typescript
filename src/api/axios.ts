@@ -1,11 +1,10 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { apiConfig } from './api.config';
 
 export class Axios {
 
     [x:string]: any;
 
-    public constructor (config: AxiosRequestConfig=apiConfig) {
+    public constructor (config: AxiosRequestConfig) {
         return axios.create(config);
     }
 }

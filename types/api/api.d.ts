@@ -1,5 +1,5 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { Axios } from './axios';
+import { Axios } from "./axios";
 /**
  * ES6 Axios Class.
  *
@@ -20,13 +20,43 @@ import { Axios } from './axios';
  * }
  */
 export declare class Api extends Axios {
+    private token;
+    private baseUrl;
     /**
      * Creates an instance of Api.
      *
      * @param {import("axios").AxiosRequestConfig} [config] - axios configuration.
      * @memberof Api
      */
-    constructor(config?: AxiosRequestConfig);
+    constructor(config: AxiosRequestConfig);
+    /**
+     * Gets Token.
+     *
+     * @returns {string} token.
+     * @memberof Api
+     */
+    getToken(): string;
+    /**
+     * Sets Token.
+     *
+     * @param {string} token - token.
+     * @memberof Api
+     */
+    setToken(token: string): void;
+    /**
+     * Sets Base Url.
+     *
+     * @param {string} baseUrl - domanin.
+     * @memberof Api
+     */
+    getBaseUrl(): string;
+    /**
+     * Gets base url.
+     *
+     * @returns {string} `baseUrl`.
+     * @memberof Api
+     */
+    setBaseUrl(baseUrl: string): void;
     /**
      * Get Uri
      *
@@ -69,6 +99,18 @@ export declare class Api extends Axios {
      * @memberof Api
      */
     get<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R>;
+    /**
+     * HTTP OPTIONS method.
+     *
+     * @access public
+     * @template T - `TYPE`: expected object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
+     * @param {string} url - endpoint you want to reach.
+     * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
+     * @returns {Promise<R>} HTTP `axios` response payload.
+     * @memberof Api
+     */
+    options<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R>;
     /**
      * HTTP DELETE method, `statusCode`: 204 No Content.
      *
@@ -122,18 +164,18 @@ export declare class Api extends Axios {
      */
     put<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R>;
     /**
-      * HTTP PATCH method.
-      *
-      * @access public
-      * @template T - `TYPE`: expected object.
-      * @template B - `BODY`: body request object.
-      * @template R - `RESPONSE`: expected object inside a axios response format.
-      * @param {string} url - endpoint you want to reach.
-      * @param {B} data - payload to be send as the `request body`,
-      * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
-      * @returns {Promise<R>} - HTTP [axios] response payload.
-      * @memberof Api
-      */
+     * HTTP PATCH method.
+     *
+     * @access public
+     * @template T - `TYPE`: expected object.
+     * @template B - `BODY`: body request object.
+     * @template R - `RESPONSE`: expected object inside a axios response format.
+     * @param {string} url - endpoint you want to reach.
+     * @param {B} data - payload to be send as the `request body`,
+     * @param {import("axios").AxiosRequestConfig} [config] - axios request configuration.
+     * @returns {Promise<R>} - HTTP [axios] response payload.
+     * @memberof Api
+     */
     patch<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R>;
     /**
      *

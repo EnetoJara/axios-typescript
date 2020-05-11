@@ -1,0 +1,30 @@
+{
+    "root": true,
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "space-before-function-paren": ["error", "always"],
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "any", "prev": "*", "next": "*" },
+            { "blankLine": "always", "prev": "*", "next": ["return"] },
+            { "blankLine": "always", "prev": "directive", "next": "*" },
+            { "blankLine": "always", "prev": "directive", "next": "*" },
+
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+            { "blankLine": "never", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+            { "blankLine": "always", "prev": "export", "next": ["const", "let", "var", "function"] }
+        ]
+    }
+}

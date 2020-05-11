@@ -12,12 +12,13 @@
     "sourceMap": true,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     "rootDir": "./src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-    // "composite": false,                     /* Enable project compilation */
-    //"tsBuildInfoFile": "./lib/tsBuildInfoFile.json",               /* Specify file to store incremental compilation information */
+    "outDir": "./es5",
+    "composite": true,                     /* Enable project compilation */
+    "tsBuildInfoFile": "./es5/tsBuildInfoFile.json",               /* Specify file to store incremental compilation information */
     "removeComments": false,                /* Do not emit comments to output. */
-    "emitDeclarationOnly": true,
-    //"noEmit": true,                        /* Do not emit outputs. */
-    "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
+    // "emitDeclarationOnly": true,
+    "noEmit": false,                        /* Do not emit outputs. */
+    // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
     // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     "isolatedModules": false,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
 
@@ -72,12 +73,13 @@
     "./src/index.ts",
     "./src/api/index.ts",
     "./src/api/api.ts",
-    "./src/api/api.config.ts",
     "./src/api/axios.ts"
   ],
   "exclude": [
     "./.git/*",
     "./node_modules/*",
     "./lib/*",
+    "./es/*",
+    "./babel.config.js"
   ]
 }

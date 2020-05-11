@@ -1,6 +1,19 @@
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { Axios } from "./axios";
-
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = require("./axios");
 /**
  * ES6 Axios Class.
  *
@@ -20,71 +33,64 @@ import { Axios } from "./axios";
  *   }
  * }
  */
-export class Api extends Axios {
-    private token: string;
-    private baseUrl: string;
+var Api = /** @class */ (function (_super) {
+    __extends(Api, _super);
     /**
      * Creates an instance of Api.
      *
      * @param {import("axios").AxiosRequestConfig} [config] - axios configuration.
      * @memberof Api
      */
-    public constructor(config: AxiosRequestConfig) {
-        super(config);
-
-        this.token = "";
-        this.baseUrl = "";
-
-        this.getUri = this.getUri.bind(this);
-        this.request = this.request.bind(this);
-        this.get = this.get.bind(this);
-        this.delete = this.delete.bind(this);
-        this.head = this.head.bind(this);
-        this.post = this.post.bind(this);
-        this.put = this.put.bind(this);
-        this.patch = this.patch.bind(this);
+    function Api(config) {
+        var _this = _super.call(this, config) || this;
+        _this.token = "";
+        _this.baseUrl = "";
+        _this.getUri = _this.getUri.bind(_this);
+        _this.request = _this.request.bind(_this);
+        _this.get = _this.get.bind(_this);
+        _this.delete = _this.delete.bind(_this);
+        _this.head = _this.head.bind(_this);
+        _this.post = _this.post.bind(_this);
+        _this.put = _this.put.bind(_this);
+        _this.patch = _this.patch.bind(_this);
+        return _this;
     }
-
     /**
      * Gets Token.
      *
      * @returns {string} token.
      * @memberof Api
      */
-    public getToken(): string {
+    Api.prototype.getToken = function () {
         return this.token;
-    }
-
+    };
     /**
      * Sets Token.
      *
      * @param {string} token - token.
      * @memberof Api
      */
-    public setToken(token: string): void {
+    Api.prototype.setToken = function (token) {
         this.token = token;
-    }
-
+    };
     /**
      * Sets Base Url.
      *
      * @param {string} baseUrl - domanin.
      * @memberof Api
      */
-    public getBaseUrl(): string {
+    Api.prototype.getBaseUrl = function () {
         return this.baseUrl;
-    }
-
+    };
     /**
      * Gets base url.
      *
      * @returns {string} `baseUrl`.
      * @memberof Api
      */
-    public setBaseUrl(baseUrl: string): void {
+    Api.prototype.setBaseUrl = function (baseUrl) {
         this.baseUrl = baseUrl;
-    }
-
+    };
     /**
      * Get Uri
      *
@@ -92,10 +98,9 @@ export class Api extends Axios {
      * @returns {string}
      * @memberof Api
      */
-    public getUri(config?: AxiosRequestConfig): string {
+    Api.prototype.getUri = function (config) {
         return this.getUri(config);
-    }
-
+    };
     /**
      * Generic request.
      *
@@ -117,10 +122,9 @@ export class Api extends Axios {
      * }).then((response: AxiosResponse<User>) => response.data)
      *
      */
-    public request<T, R = AxiosResponse<T>>(config: AxiosRequestConfig): Promise<R> {
+    Api.prototype.request = function (config) {
         return this.request(config);
-    }
-
+    };
     /**
      * HTTP GET method, used to fetch data `statusCode`: 200.
      *
@@ -132,10 +136,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} HTTP `axios` response payload.
      * @memberof Api
      */
-    public get<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.get = function (url, config) {
         return this.get(url, config);
-    }
-
+    };
     /**
      * HTTP OPTIONS method.
      *
@@ -147,10 +150,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} HTTP `axios` response payload.
      * @memberof Api
      */
-    public options<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.options = function (url, config) {
         return this.options(url, config);
-    }
-
+    };
     /**
      * HTTP DELETE method, `statusCode`: 204 No Content.
      *
@@ -162,10 +164,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public delete<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.delete = function (url, config) {
         return this.delete(url, config);
-    }
-
+    };
     /**
      * HTTP HEAD method.
      *
@@ -177,10 +178,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public head<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.head = function (url, config) {
         return this.head(url, config);
-    }
-
+    };
     /**
      * HTTP POST method `statusCode`: 201 Created.
      *
@@ -194,10 +194,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public post<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.post = function (url, data, config) {
         return this.post(url, data, config);
-    }
-
+    };
     /**
      * HTTP PUT method.
      *
@@ -211,10 +210,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public put<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.put = function (url, data, config) {
         return this.put(url, data, config);
-    }
-
+    };
     /**
      * HTTP PATCH method.
      *
@@ -228,10 +226,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public patch<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    Api.prototype.patch = function (url, data, config) {
         return this.patch(url, data, config);
-    }
-
+    };
     /**
      *
      * @template T - type.
@@ -239,11 +236,13 @@ export class Api extends Axios {
      * @returns {T} - expected object.
      * @memberof Api
      */
-    public success<T>(response: AxiosResponse<T>): T {
+    Api.prototype.success = function (response) {
         return response.data;
-    }
-
-    public error(error: AxiosError<Error>) {
+    };
+    Api.prototype.error = function (error) {
         throw error;
-    }
-}
+    };
+    return Api;
+}(axios_1.Axios));
+exports.Api = Api;
+//# sourceMappingURL=api.js.map

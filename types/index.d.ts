@@ -1,2 +1,2 @@
-declare const api: any;
+export { Api } from "./api";
 //# sourceMappingURL=index.d.ts.map
