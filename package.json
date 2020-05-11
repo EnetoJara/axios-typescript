@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "es6 axios class",
   "main": "./lib/index.js",
   "deprecated": false,
@@ -20,8 +20,10 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production tsc --build ./tsconfig.json",
+    "build:es": "NODE_ENV=production BABEL_ENV=esmodules babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./es",
+    "build:commonjs": "NODE_ENV=production BABEL_ENV=commonjs babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./lib",
     "prebuild": "rm -rf ./types ./lib ./es",
-    "postbuild": "babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./es",
+    "postbuild": "npm run build:es && npm run build:commonjs",
     "pretty:es": "prettier \"./es/**/*.js\" --color --write",
     "pretty:commonjs": "prettier \"./lib/**/*.js\" --color --write",
     "pretty": "npm run pretty:commonjs && npm run pretty:es"
@@ -35,18 +37,29 @@
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.6",
+    "@babel/plugin-transform-classes": "7.9.5",
+    "@babel/plugin-transform-object-super": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.9.6",
+    "@babel/preset-env": "7.9.6",
     "@babel/preset-typescript": "7.9.0",
+    "@babel/register": "7.9.0",
     "@types/node": "13.13.5",
     "@types/qs": "6.9.2",
-    "axios": "0.19.2",
     "prettier": "2.0.5",
     "qs": "6.9.4",
     "tslib": "1.11.2",
     "typescript": "3.8.3"
   },
   "peerDependencies": {
+    "@babel/runtime": "^7.9.6",
+    "@babel/runtime-corejs3": "^7.9.6",
     "axios": "^0.19.2",
-    "tslib": "^1.11.2",
-    "typescript": "^3.8.3"
+    "core-js": "^3.6.5"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.9.6",
+    "@babel/runtime-corejs3": "7.9.6",
+    "axios": "0.19.2",
+    "core-js": "3.6.5"
   }
 }
