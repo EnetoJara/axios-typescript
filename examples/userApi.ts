@@ -24,12 +24,12 @@ export class UserApi extends Api {
     }
 
     public userLogin (credentials: Credentials): Promise<Token> {
-        return this.post<string,Credentials, AxiosResponse<string>>("https://www.domain.com/login", credentials)
+        return this.post<string,Credentials, AxiosResponse<string>>("domain/login", credentials)
             .then(this.success);
     }
 
     public userRegister (user: User): Promise<number> {
-        return this.post<number, User, AxiosResponse<number>>("https://www.domain.com/register", user)
+        return this.post<number, User, AxiosResponse<number>>("domain/register", user)
             .then(this.success)
             .catch((error: AxiosError<Error>) => {
                 throw error;
@@ -38,7 +38,7 @@ export class UserApi extends Api {
 
     public async getAllUsers (): Promise<User[]> {
         try {
-            const res: AxiosResponse<User[]> = await this.get<User,AxiosResponse<User[]>>("https://www.domain.com/register");
+            const res: AxiosResponse<User[]> = await this.get<User,AxiosResponse<User[]>>("domain/register");
 
             return this.success(res);
         } catch (error) {
@@ -47,7 +47,7 @@ export class UserApi extends Api {
     }
 
     public getById (id: number): Promise<User> {
-        return this.get<User,AxiosResponse<User>>(`https://www.domain.com/users/${id}`)
+        return this.get<User,AxiosResponse<User>>(`domain/users/${id}`)
             .then(this.success)
     }
 }
