@@ -3,6 +3,7 @@ module.exports = (api) => {
 
     if (process.env.BABEL_ENV === "commonjs") {
         return {
+            "comments": false,
             presets: ["@babel/preset-typescript"],
             plugins: [
                 "@babel/plugin-transform-modules-commonjs"
@@ -11,6 +12,7 @@ module.exports = (api) => {
     }
 
     return {
+        "comments": false,
         presets: [
             "@babel/preset-typescript"
         ]

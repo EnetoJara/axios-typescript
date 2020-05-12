@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "es6 axios class",
   "main": "./lib/index.js",
   "deprecated": false,
@@ -40,10 +40,8 @@
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.6",
-    "@babel/plugin-transform-classes": "7.9.5",
     "@babel/plugin-transform-modules-commonjs": "7.9.6",
     "@babel/preset-typescript": "7.9.0",
-    "@babel/register": "7.9.0",
     "@types/node": "13.13.5",
     "@types/qs": "6.9.2",
     "babel-core": "7.0.0-bridge.0",
@@ -54,18 +52,10 @@
     "prettier": "2.0.5",
     "qs": "6.9.4",
     "tslib": "1.11.2",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "axios": "0.19.2"
   },
   "peerDependencies": {
-    "@babel/runtime": "^7.9.6",
-    "@babel/runtime-corejs3": "^7.9.6",
-    "axios": "^0.19.2",
-    "core-js": "^3.6.5"
-  },
-  "dependencies": {
-    "@babel/runtime": "7.9.6",
-    "@babel/runtime-corejs3": "7.9.6",
-    "axios": "0.19.2",
-    "core-js": "3.6.5"
+    "axios": "^0.19.2"
   }
 }
