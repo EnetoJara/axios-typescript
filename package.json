@@ -21,7 +21,8 @@
         "es"
     ],
     "scripts": {
-        "build": "NODE_ENV=production tsc --build ./tsconfig.json"
+        "build": "NODE_ENV=production tsc --build ./tsconfig.json",
+        "test": "mocha ./test/api/*.test.js"
     },
     "keywords": [
         "Axios",
@@ -31,9 +32,19 @@
     ],
     "license": "Apache-2.0",
     "devDependencies": {
+        "@types/chai": "4.2.11",
+        "@types/chai-http": "4.2.0",
+        "@types/mocha": "7.0.2",
+        "@types/qs": "6.9.2",
+        "axios": "0.19.2",
+        "chai": "4.2.0",
+        "chai-http": "4.3.0",
+        "mocha": "7.1.2",
+        "qs": "6.9.4",
+        "source-map-support": "0.5.19",
+        "ts-node": "8.10.1",
         "tslib": "1.11.2",
-        "typescript": "3.8.3",
-        "axios": "0.19.2"
+        "typescript": "3.8.3"
     },
     "peerDependencies": {
         "axios": "^0.19.2"
