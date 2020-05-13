@@ -5,6 +5,8 @@
     "main": "./lib/index.js",
     "deprecated": false,
     "module": "./es/index.js",
+    "repository":"https://github.com/EnetoJara/axios-typescript",
+    "bugs": "https://github.com/EnetoJara/axios-typescript/issues",
     "types": "./index.d.ts",
     "author": {
         "name": "Ernesto Jara Olveda",
