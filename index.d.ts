@@ -1,1 +1,1 @@
-export { Api, apiConfig } from "./types";
+export { Api } from "./types";
