@@ -1,62 +1,62 @@
 {
-  "name": "axios-es6-class",
-  "version": "4.0.2",
-  "description": "es6 axios class",
-  "main": "./lib/index.js",
-  "deprecated": false,
-  "module": "./es/index.js",
-  "types": "./index.d.ts",
-  "author": {
-    "name": "Ernesto Jara Olveda",
-    "email": "ernesto.jara06@gmail.com",
-    "url": "https://www.enetojarapro.com"
-  },
-  "files": [
-    "index.d.ts",
-    "lib",
-    "types",
-    "examples",
-    "es"
-  ],
-  "scripts": {
-    "build": "NODE_ENV=production tsc --build ./tsconfig.json",
-    "build:es": "NODE_ENV=production BABEL_ENV=esmodules babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./es",
-    "build:commonjs": "NODE_ENV=production BABEL_ENV=commonjs babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./lib",
-    "prebuild": "rm -rf ./types ./es5 ./lib ./es",
-    "postbuild": "npm run build:es && npm run build:commonjs && npm run pretty",
-    "pretty:es": "prettier \"./es/**/*.js\" --color --write",
-    "pretty:commonjs": "prettier \"./lib/**/*.js\" --color --write",
-    "pretty": "npm run pretty:commonjs && npm run pretty:es",
-    "eslint:es": "eslint \"./es/**.js\" --fix --color",
-    "eslint:commonjs": "eslint \"./lib/**.js\" --fix --color",
-    "lint": "npm run pretty && npm run eslint:es && npm run eslint:commonjs"
-  },
-  "keywords": [
-    "Axios",
-    "TypeScript",
-    "es6",
-    "class"
-  ],
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.6",
-    "@babel/plugin-transform-modules-commonjs": "7.9.6",
-    "@babel/preset-typescript": "7.9.0",
-    "@types/node": "13.13.5",
-    "@types/qs": "6.9.2",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "10.1.0",
-    "eslint": "7.0.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-prettier": "3.1.3",
-    "prettier": "2.0.5",
-    "qs": "6.9.4",
-    "tslib": "1.11.2",
-    "typescript": "3.8.3",
-    "axios": "0.19.2"
-  },
-  "peerDependencies": {
-    "axios": "^0.19.2"
-  }
+    "name": "axios-es6-class",
+    "version": "4.0.2",
+    "description": "es6 axios class",
+    "main": "./lib/index.js",
+    "deprecated": false,
+    "module": "./es/index.js",
+    "types": "./index.d.ts",
+    "author": {
+        "name": "Ernesto Jara Olveda",
+        "email": "ernesto.jara06@gmail.com",
+        "url": "https://www.enetojarapro.com"
+    },
+    "files": [
+        "index.d.ts",
+        "lib",
+        "types",
+        "examples",
+        "es"
+    ],
+    "scripts": {
+        "build": "NODE_ENV=production tsc --build ./tsconfig.json",
+        "build:es": "NODE_ENV=production BABEL_ENV=esmodules babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./es",
+        "build:commonjs": "NODE_ENV=production BABEL_ENV=commonjs babel --config-file ./babel.config.js ./src --extensions .ts --out-dir ./lib",
+        "prebuild": "rm -rf ./types ./es5 ./lib ./es",
+        "postbuild": "npm run build:es && npm run build:commonjs && npm run pretty",
+        "pretty:es": "prettier \"./es/**/*.js\" --color --write",
+        "pretty:commonjs": "prettier \"./lib/**/*.js\" --color --write",
+        "pretty": "npm run pretty:commonjs && npm run pretty:es",
+        "eslint:es": "eslint \"./es/**.js\" --fix --color",
+        "eslint:commonjs": "eslint \"./lib/**.js\" --fix --color",
+        "lint": "npm run pretty && npm run eslint:es && npm run eslint:commonjs"
+    },
+    "keywords": [
+        "Axios",
+        "TypeScript",
+        "es6",
+        "class"
+    ],
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@babel/cli": "7.8.4",
+        "@babel/core": "7.9.6",
+        "@babel/plugin-transform-modules-commonjs": "7.9.6",
+        "@babel/preset-typescript": "7.9.0",
+        "@types/node": "13.13.5",
+        "@types/qs": "6.9.2",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-eslint": "10.1.0",
+        "eslint": "7.0.0",
+        "eslint-config-prettier": "6.11.0",
+        "eslint-plugin-prettier": "3.1.3",
+        "prettier": "2.0.5",
+        "qs": "6.9.4",
+        "tslib": "1.11.2",
+        "typescript": "3.8.3",
+        "axios": "0.19.2"
+    },
+    "peerDependencies": {
+        "axios": "^0.19.2"
+    }
 }
