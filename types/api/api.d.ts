@@ -185,6 +185,13 @@ export declare class Api extends Axios {
      * @memberof Api
      */
     success<T>(response: AxiosResponse<T>): T;
-    error(error: AxiosError<Error>): void;
+    /**
+     *
+     *
+     * @template T type.
+     * @param {AxiosError<T>} error
+     * @memberof Api
+     */
+    error<T>(error: AxiosError<T>): void;
 }
 //# sourceMappingURL=api.d.ts.map

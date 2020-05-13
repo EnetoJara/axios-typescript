@@ -1,6 +1,4 @@
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { Axios } from "./axios";
-
 /**
  * ES6 Axios Class.
  *
@@ -21,20 +19,16 @@ import { Axios } from "./axios";
  * }
  */
 export class Api extends Axios {
-    private token: string;
-    private baseUrl: string;
     /**
      * Creates an instance of Api.
      *
      * @param {import("axios").AxiosRequestConfig} [config] - axios configuration.
      * @memberof Api
      */
-    public constructor(config: AxiosRequestConfig) {
+    constructor(config) {
         super(config);
-
         this.token = "";
         this.baseUrl = "";
-
         this.getUri = this.getUri.bind(this);
         this.request = this.request.bind(this);
         this.get = this.get.bind(this);
@@ -44,47 +38,42 @@ export class Api extends Axios {
         this.put = this.put.bind(this);
         this.patch = this.patch.bind(this);
     }
-
     /**
      * Gets Token.
      *
      * @returns {string} token.
      * @memberof Api
      */
-    public getToken(): string {
+    getToken() {
         return this.token;
     }
-
     /**
      * Sets Token.
      *
      * @param {string} token - token.
      * @memberof Api
      */
-    public setToken(token: string): void {
+    setToken(token) {
         this.token = token;
     }
-
     /**
      * Sets Base Url.
      *
      * @param {string} baseUrl - domanin.
      * @memberof Api
      */
-    public getBaseUrl(): string {
+    getBaseUrl() {
         return this.baseUrl;
     }
-
     /**
      * Gets base url.
      *
      * @returns {string} `baseUrl`.
      * @memberof Api
      */
-    public setBaseUrl(baseUrl: string): void {
+    setBaseUrl(baseUrl) {
         this.baseUrl = baseUrl;
     }
-
     /**
      * Get Uri
      *
@@ -92,10 +81,9 @@ export class Api extends Axios {
      * @returns {string}
      * @memberof Api
      */
-    public getUri(config?: AxiosRequestConfig): string {
+    getUri(config) {
         return this.getUri(config);
     }
-
     /**
      * Generic request.
      *
@@ -117,10 +105,9 @@ export class Api extends Axios {
      * }).then((response: AxiosResponse<User>) => response.data)
      *
      */
-    public request<T, R = AxiosResponse<T>>(config: AxiosRequestConfig): Promise<R> {
+    request(config) {
         return this.request(config);
     }
-
     /**
      * HTTP GET method, used to fetch data `statusCode`: 200.
      *
@@ -132,10 +119,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} HTTP `axios` response payload.
      * @memberof Api
      */
-    public get<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    get(url, config) {
         return this.get(url, config);
     }
-
     /**
      * HTTP OPTIONS method.
      *
@@ -147,10 +133,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} HTTP `axios` response payload.
      * @memberof Api
      */
-    public options<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    options(url, config) {
         return this.options(url, config);
     }
-
     /**
      * HTTP DELETE method, `statusCode`: 204 No Content.
      *
@@ -162,10 +147,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public delete<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    delete(url, config) {
         return this.delete(url, config);
     }
-
     /**
      * HTTP HEAD method.
      *
@@ -177,10 +161,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public head<T, R = AxiosResponse<T>>(url: string, config?: AxiosRequestConfig): Promise<R> {
+    head(url, config) {
         return this.head(url, config);
     }
-
     /**
      * HTTP POST method `statusCode`: 201 Created.
      *
@@ -194,10 +177,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public post<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    post(url, data, config) {
         return this.post(url, data, config);
     }
-
     /**
      * HTTP PUT method.
      *
@@ -211,10 +193,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public put<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    put(url, data, config) {
         return this.put(url, data, config);
     }
-
     /**
      * HTTP PATCH method.
      *
@@ -228,10 +209,9 @@ export class Api extends Axios {
      * @returns {Promise<R>} - HTTP [axios] response payload.
      * @memberof Api
      */
-    public patch<T, B, R = AxiosResponse<T>>(url: string, data?: B, config?: AxiosRequestConfig): Promise<R> {
+    patch(url, data, config) {
         return this.patch(url, data, config);
     }
-
     /**
      *
      * @template T - type.
@@ -239,10 +219,9 @@ export class Api extends Axios {
      * @returns {T} - expected object.
      * @memberof Api
      */
-    public success<T> (response: AxiosResponse<T>): T {
+    success(response) {
         return response.data;
     }
-
     /**
      *
      *
@@ -250,7 +229,8 @@ export class Api extends Axios {
      * @param {AxiosError<T>} error
      * @memberof Api
      */
-    public error<T> (error: AxiosError<T>) {
+    error(error) {
         throw error;
     }
 }
+//# sourceMappingURL=api.js.map
