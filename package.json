@@ -1,6 +1,6 @@
 {
   "name": "axios-es6-class",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "es6 axios class",
   "main": "./lib/index.js",
   "deprecated": false,
@@ -34,7 +34,8 @@
   "keywords": [
     "Axios",
     "TypeScript",
-    "es6"
+    "es6",
+    "class"
   ],
   "license": "Apache-2.0",
   "devDependencies": {
