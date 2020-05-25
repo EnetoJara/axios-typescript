@@ -121,13 +121,3 @@ The request interceptor gets an [AxiosRequestConfig](https://github.com/axios/ax
 ```
 
 There are still some utilities that axios have that I have not add, but you can do almost everything on a es6 fashion way.
-
-####  NOTE: If your project does not supports es6 class you must import the es5 version of this repo.
-
-```typescript
-// instead of
-import { Api } from "axios-es6-class";
-
-// you should do:
-var Api = require("axios-es6-class/es5").Api;
-```
