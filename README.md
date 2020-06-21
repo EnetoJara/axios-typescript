@@ -25,7 +25,7 @@ import {AxiosRequestConfig} from "axios";
 // this are the minimun properties the Api class expect
 export const apiConfig: AxiosRequestConfig = {
     timeout: 20000,
-    baseUrl: "https://www.domain.com"
+    baseURL: "https://www.domain.com"
 };
 
 export class UserApi extends Api {
@@ -60,13 +60,11 @@ export class UserApi extends Api {
         // this middleware is been called right before the http request is made.
         this.interceptors.request.use(param => {
             return {
-                ...param,
-                defaults: {
-                    headers: {
-                        ...param.headers,
-                        "Authorization": `Bearer ${this.getToken()}`
-                    },
-                }
+                 ...param,
+                headers: {
+                    ...param.headers,
+                    Authorization: `Bearer ${token}`,
+                },
             }
         });
 

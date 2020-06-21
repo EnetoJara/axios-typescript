@@ -11,7 +11,7 @@ import { Credentials, Token, User } from "./interfaces";
  *
  * @example
  * const config = {
- *  baseUrl: "www.domain.com"
+ *  baseURL: "www.domain.com"
  * }
  * const api = new UserApi(config);
  *  */
