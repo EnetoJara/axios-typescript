@@ -25,7 +25,7 @@ import {AxiosRequestConfig} from "axios";
 // this are the minimun properties the Api class expect
 export const apiConfig: AxiosRequestConfig = {
     timeout: 20000,
-    baseUrl: "https://www.domain.com"
+    baseURL: "https://www.domain.com"
 };
 
 export class UserApi extends Api {
