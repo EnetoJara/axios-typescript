@@ -1,12 +1,12 @@
 {
     "name": "axios-es6-class",
-    "version": "4.1.1",
+    "version": "4.2.2",
     "description": "es6 axios class",
     "main": "./lib/index.js",
     "deprecated": false,
     "repository": "https://github.com/EnetoJara/axios-typescript",
     "bugs": "https://github.com/EnetoJara/axios-typescript/issues",
-    "types": "./index.d.ts",
+    "types": "./types/index.d.ts",
     "author": {
         "name": "Ernesto Jara Olveda",
         "email": "ernesto.jara06@gmail.com",
@@ -35,6 +35,8 @@
         "axios": "0.20.0",
         "chai": "4.2.0",
         "mocha": "7.2.0",
-        "qs": "6.9.4"
+        "qs": "6.9.4",
+        "tslib": "2.0.2",
+        "typescript": "4.0.3"
     }
 }

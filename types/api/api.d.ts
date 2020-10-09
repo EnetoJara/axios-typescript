@@ -1,34 +1,18 @@
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { Axios } from "./axios";
+import { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 /**
- * ES6 Axios Class.
+ * @class Api Class is a fancy es6 wrapper class for axios.
  *
- * @class Api
- * @extends {Axios}
- * @example
- * class UserApi extends Api {
- *   public constructor (config) {
- *     super(config);
- *
- *     this.login=this.login.bind(this);
- *   }
- *
- *   public login (user: User) {
- *     return this.post<string, User, AxiosResponse<User>>("https://www.domain/login", {name: user.name, pass: user.pass})
- *        .then((res: AxiosResponse<string>) => res.data);
- *   }
- * }
+ * @param {import("axios").AxiosRequestConfig} config - axios Request Config.
+ * @link [AxiosRequestConfig](https://github.com/axios/axios#request-config)
  */
 export declare class Api extends Axios {
     private token;
-    private baseUrl;
     /**
-     * Creates an instance of Api.
-     *
-     * @param {import("axios").AxiosRequestConfig} [config] - axios configuration.
-     * @memberof Api
+     * Creates an instance of api.
+     * @param {import("axios").AxiosRequestConfig} conf
      */
-    constructor(config: AxiosRequestConfig);
+    constructor(conf: AxiosRequestConfig);
     /**
      * Gets Token.
      *
@@ -43,20 +27,6 @@ export declare class Api extends Axios {
      * @memberof Api
      */
     setToken(token: string): void;
-    /**
-     * Sets Base Url.
-     *
-     * @param {string} baseUrl - domanin.
-     * @memberof Api
-     */
-    getBaseUrl(): string;
-    /**
-     * Gets base url.
-     *
-     * @returns {string} `baseUrl`.
-     * @memberof Api
-     */
-    setBaseUrl(baseUrl: string): void;
     /**
      * Get Uri
      *

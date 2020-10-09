@@ -1,0 +1,133 @@
+{
+  "program": {
+    "fileInfos": {
+      "./node_modules/typescript/lib/lib.d.ts": {
+        "version": "2dc8c927c9c162a773c6bb3cdc4f3286c23f10eedc67414028f9cb5951610f60",
+        "signature": "2dc8c927c9c162a773c6bb3cdc4f3286c23f10eedc67414028f9cb5951610f60",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "c9a1f03d6ba0fe3c871eb0dd81622e78fbb61ade70878b34d48a341a690c59e9",
+        "signature": "c9a1f03d6ba0fe3c871eb0dd81622e78fbb61ade70878b34d48a341a690c59e9",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "38130cdd16bd2318b9362f9d60dd9670f7e38708bb6131cf11fc78a41b2c34a0",
+        "signature": "38130cdd16bd2318b9362f9d60dd9670f7e38708bb6131cf11fc78a41b2c34a0",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "signature": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "signature": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "affectsGlobalScope": true
+      },
+      "./node_modules/axios/index.d.ts": {
+        "version": "c50b2f015a8bddda1689f8228703f177614f9e10348f4a845104f04351264507",
+        "signature": "c50b2f015a8bddda1689f8228703f177614f9e10348f4a845104f04351264507",
+        "affectsGlobalScope": false
+      },
+      "./src/api/axios.ts": {
+        "version": "a3a90f4d63b2f917de9d0d9895a4609606173c983320a1315eadb69a88cc7469",
+        "signature": "4ed7e69037ed571bee05f2f611159032b59258208d4a4c49a58c1fc34d3c730b",
+        "affectsGlobalScope": false
+      },
+      "./src/api/api.ts": {
+        "version": "af36cef1a100cff3d527a96112fe7bc048390bc8bdd6e7793d4a4de9a37859d6",
+        "signature": "433a63a203f659629468ece763ddac2fcacf0546f74f62b4c17f9fd9cd1b3d0b",
+        "affectsGlobalScope": false
+      },
+      "./src/api/index.ts": {
+        "version": "c169ebf199a1ed5a9e1826f7d3d8f0896e1033c4e15c080e42ea5668c79cc58f",
+        "signature": "0989c8bf50e4b63c03b8ca6ae42309916fa81e265eaee05f7e17db943857e502",
+        "affectsGlobalScope": false
+      },
+      "./src/index.ts": {
+        "version": "c169ebf199a1ed5a9e1826f7d3d8f0896e1033c4e15c080e42ea5668c79cc58f",
+        "signature": "0989c8bf50e4b63c03b8ca6ae42309916fa81e265eaee05f7e17db943857e502",
+        "affectsGlobalScope": false
+      }
+    },
+    "options": {
+      "incremental": true,
+      "target": 1,
+      "module": 1,
+      "jsx": 1,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "declarationDir": "./types",
+      "outDir": "./lib",
+      "rootDir": "./src",
+      "tsBuildInfoFile": "./tsBuildInfoFile.json",
+      "isolatedModules": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "moduleResolution": 2,
+      "types": [
+        "axios"
+      ],
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "configFilePath": "./tsconfig.json"
+    },
+    "referencedMap": {
+      "./src/api/api.ts": [
+        "./node_modules/axios/index.d.ts",
+        "./src/api/axios.ts"
+      ],
+      "./src/api/axios.ts": [
+        "./node_modules/axios/index.d.ts"
+      ],
+      "./src/api/index.ts": [
+        "./src/api/api.ts"
+      ],
+      "./src/index.ts": [
+        "./src/api/index.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "./src/api/api.ts": [
+        "./node_modules/axios/index.d.ts",
+        "./src/api/axios.ts"
+      ],
+      "./src/api/axios.ts": [
+        "./node_modules/axios/index.d.ts"
+      ],
+      "./src/api/index.ts": [
+        "./src/api/api.ts"
+      ],
+      "./src/index.ts": [
+        "./src/api/index.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "./node_modules/axios/index.d.ts",
+      "./node_modules/typescript/lib/lib.d.ts",
+      "./node_modules/typescript/lib/lib.dom.d.ts",
+      "./node_modules/typescript/lib/lib.es5.d.ts",
+      "./node_modules/typescript/lib/lib.scripthost.d.ts",
+      "./node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "./src/api/api.ts",
+      "./src/api/axios.ts",
+      "./src/api/index.ts",
+      "./src/index.ts"
+    ]
+  },
+  "version": "4.0.3"
+}
