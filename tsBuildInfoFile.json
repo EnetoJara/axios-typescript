@@ -192,12 +192,12 @@
         "affectsGlobalScope": false
       },
       "./src/api/axios.ts": {
-        "version": "e34074a8277ca962fc53960eab6d2ff0b9fb98999c891db8930b0dd3dc7bfc7c",
+        "version": "a3a90f4d63b2f917de9d0d9895a4609606173c983320a1315eadb69a88cc7469",
         "signature": "4ed7e69037ed571bee05f2f611159032b59258208d4a4c49a58c1fc34d3c730b",
         "affectsGlobalScope": false
       },
       "./src/api/api.ts": {
-        "version": "24962da2a7db3b0338abeafd379e3cd4a25952008506308b6431a22deaa15366",
+        "version": "af36cef1a100cff3d527a96112fe7bc048390bc8bdd6e7793d4a4de9a37859d6",
         "signature": "433a63a203f659629468ece763ddac2fcacf0546f74f62b4c17f9fd9cd1b3d0b",
         "affectsGlobalScope": false
       },
@@ -214,7 +214,7 @@
     },
     "options": {
       "incremental": true,
-      "target": 1,
+      "target": 7,
       "module": 1,
       "lib": [
         "lib.es2015.d.ts",

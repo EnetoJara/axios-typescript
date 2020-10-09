@@ -4,7 +4,7 @@ import {
   AxiosResponse,
 } from "axios";
 
-import axios from "axios";
+import * as axios from "axios";
 
 export class Axios {
   public interceptors!: {
@@ -23,6 +23,7 @@ export class Axios {
   };
 
   public constructor (config: AxiosRequestConfig) {
+    // @ts-ignore
     return axios.create(config);
   }
 }

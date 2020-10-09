@@ -230,6 +230,7 @@ export class Api extends Axios {
     public success<T>(response: AxiosResponse<T>): T {
         return response.data;
     }
+
     /**
      *
      *
