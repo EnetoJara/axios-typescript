@@ -61,12 +61,10 @@ export class UserApi extends Api {
         this.interceptors.request.use(param => {
             return {
                 ...param,
-                defaults: {
-                    headers: {
-                        ...param.headers,
-                        "Authorization": `Bearer ${this.getToken()}`
-                    },
-                }
+                headers: {
+                    ...param.headers,
+                    "Authorization": `Bearer ${this.getToken()}`
+                },
             }
         });
 
@@ -100,12 +98,10 @@ The request interceptor gets an [AxiosRequestConfig](https://github.com/axios/ax
         this.interceptors.request.use((param) => {
             return {
                 ...param,
-                defaults: {
-                    headers: {
-                        ...param.headers,
-                        "Authorization": `Bearer ${this.getToken()}`
-                    },
-                }
+                headers: {
+                    ...param.headers,
+                    "Authorization": `Bearer ${this.getToken()}`
+                },
             }
         }, (error) => {
             // handling error
