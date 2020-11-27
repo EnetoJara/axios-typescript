@@ -1,6 +1,6 @@
 import { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { Credentials, Token, User } from "./interfaces";
-
+import {Api} from "../src/api";
 /**
  * Example class
  *
@@ -14,8 +14,8 @@ import { Credentials, Token, User } from "./interfaces";
  * }
  * const api = new UserApi(config);
  *  */
-export class UserApi {
-    interceptors: any;
+export class UserApi extends Api {
+
     public constructor(config: AxiosRequestConfig) {
         super(config);
 

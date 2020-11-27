@@ -1,6 +1,8 @@
-import { AxiosInterceptorManager, AxiosRequestConfig, AxiosResponse } from "axios";
-export declare class Axios {
-    interceptors: {
+import type { AxiosRequestConfig,AxiosInterceptorManager,AxiosResponse } from "axios";
+import axios from "axios";
+
+export class Axios {
+    declare public interceptors: {
         /**
          * The **Request** interceptor will be call rigth before the `http request`
          * @summary
@@ -14,6 +16,7 @@ export declare class Axios {
          */
         response: AxiosInterceptorManager<AxiosResponse>;
     };
-    constructor(config: AxiosRequestConfig);
+  public constructor (props: AxiosRequestConfig) {
+    return axios.create(props);
+  }
 }
-//# sourceMappingURL=axios.d.ts.map
