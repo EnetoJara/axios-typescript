@@ -1,5 +1,7 @@
 "use strict";
 
+var _axios = require("./axios");
+
 function Api (config) { Object.assign(this, _axios.Axios(config)); }
 
 Api.prototype = Object.create(_axios.Axios.prototype);
